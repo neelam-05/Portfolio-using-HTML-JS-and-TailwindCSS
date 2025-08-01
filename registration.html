@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NEET Registration</title>
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color: pink;
+        }
+
+        .container {
+            box-sizing: border-box;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.491);
+            padding: 30px;
+            margin: 60px auto;
+            background-color: #fff;
+            width: 800px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form .form-control {
+            margin-bottom: 15px;
+        }
+
+        .form-control label {
+            display: inline-block;
+            /* width: 200px; */
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-control input[type=password],
+        .form-control input[type=email],
+        .form-control input[type=date],
+        .form-control input[type=tel],
+        .form-control input[type=file],
+        .form-control textarea,
+        .form-control select {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            padding: 8px;
+        }
+        .form-control input[type=text] {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            height: 25px;
+        }
+        .gender-group {
+            margin-bottom: 20px;
+        }
+
+        .gender-group input{
+            width: auto;
+            margin-right: 4px;
+        }
+
+        .form-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .form-buttons input {
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 0 10px;
+            border: none;
+        }
+
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+        }
+
+        input[type="reset"] {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>NEET Registration Form</h2>
+        <form action="response.html" method="post" class="myForm" enctype="multipart/form-data">
+
+            <div class="form-control name-group">
+                <label for="first-name">Candidate Name:</label>
+                <input type="text" id="first-name" placeholder="First Name" style="width: auto;" required>
+                <input type="text" id="middle-name" placeholder="Middle Name" style="width: auto;" required>
+                <input type="text" id="last-name" placeholder="Last Name" style="width: auto;" required>
+            </div>
+
+            <div class="form-control">
+                <label for="father-name">Father's Name:</label>
+                <input type="text" id="father-name" placeholder="Enter your father's name" required>
+            </div>
+
+            <div class="form-control">
+                <label for="mother-name">Mother's Name:</label>
+                <input type="text" id="mother-name" placeholder="Enter your mother's name" required>
+            </div>
+
+            <div class="form-control">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="ex: abc@gmail.com" required>
+            </div>
+
+            <div class="form-control">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" required min="1901-01-02" max="2015-12-31">
+            </div>
+
+            <div class="form-control">
+                <label>Gender:</label>
+                <div class="gender-group">
+                    <input type="radio" name="gender" value="Female" id="female"> Female
+                    <input type="radio" name="gender" value="Male" id="male"> Male
+                    <input type="radio" name="gender" value="Other" id="other"> Other
+                </div>
+            </div>
+
+            <div class="form-control">
+                <label for="contact">Contact No:</label>
+                <input type="tel" id="contact" placeholder="eg: 9912345678" minlength="10" maxlength="10" pattern="[0-9]{10}" required>
+            </div>
+
+            <div class="form-control">
+                <label for="address">Address:</label>
+                <textarea id="address" rows="2" placeholder="Flat no, Area, City" required></textarea>
+            </div>
+
+            <div class="form-control">
+                <label for="state">State:</label>
+                <select id="state" required>
+                    <option value="" disabled>-- Select State --</option>
+                    <optgroup label="North India">
+                        <option value="Punjab">Punjab</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    </optgroup>
+                    <optgroup label="South India">
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Telangana">Telangana</option>
+                    </optgroup>
+                    <optgroup label="East India">
+                        <option value="Bihar">Bihar</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Odisha">Odisha</option>
+                    </optgroup>
+                    <optgroup label="West India">
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Goa">Goa</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div class="form-control">
+                <label for="nationality">Nationality:</label>
+                <input type="text" id="nationality" value="Indian" readonly>
+            </div>
+
+            <div class="form-control">
+                <label for="category">Category:</label>
+                <select id="category" required>
+                    <option value="">-- Select Category --</option>
+                    <option value="SC">SC</option>
+                    <option value="ST">ST</option>
+                    <option value="OBC">OBC</option>
+                    <option value="General">General</option>
+                </select>
+            </div>
+
+            <div class="form-control">
+                <label for="aadhaar">Aadhaar Number:</label>
+                <input type="text" id="aadhaar" placeholder="Enter 12 digit Aadhaar No" maxlength="12" required>
+            </div>
+
+            <div class="form-control">
+                <label for="qualification">Qualification:</label>
+                <input type="text" id="qualification" placeholder="e.g. 12th pass" required>
+            </div>
+
+            <div class="form-control">
+                <label for="percentage">Percentage:</label>
+                <input type="text" id="percentage" placeholder="e.g. 85%" required>
+            </div>
+
+            <div class="form-control">
+                <label for="documents">Upload Documents:</label>
+                <input type="file" id="documents" multiple required>
+                <small>Upload Your Photo, Aadhaar Card and Marksheet..</small>
+            </div>
+
+            <div class="form-buttons">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

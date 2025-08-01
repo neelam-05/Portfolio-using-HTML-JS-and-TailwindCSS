@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="src/output.css">
+
+    <style>
+        /* Initial state of animation elements */
+        .hidden-element {
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        /* Animations for different directions */
+        .animate-from-bottom {
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+
+        .animate-from-left {
+            animation: fadeInLeft 0.5s ease-out forwards;
+        }
+
+        .animate-from-right {
+            animation: fadeInRight 0.5s ease-out forwards;
+        }
+
+        .animate-scale {
+            animation: scaleIn 0.5s ease-out forwards;
+        }
+
+        /* Keyframes for animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Existing animations */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .animate-slide-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideIn 0.5s forwards;
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animated progress bars for skills */
+        .skill-bar {
+            position: relative;
+            width: 100%;
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .skill-level {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: #1b5e20;
+            width: 0;
+            transition: width 1s ease-out;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body class="font-rough">
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50">
+        <nav class="flex p-6 items-center justify-between h-8 bg-green-900 text-white">
+            <h1 class="text-3xl font-bold">Portfolio</h1>
+            <ul class="flex space-x-5 text-xl font-bold">
+                <li><a href="#">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experiences">Experiences</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Cover Section with Improved Animation -->
+    <section class="h-150 bg-cover bg-no-repeat" style="background-image: url(bg01.png);">
+        <div class="p-50 top-0 text-green-900 space-x-2.5">
+            <p class="text-xl opacity-0 animate-[fadeIn_1s_0.3s_forwards]">Hello, I'm</p>
+            <p class="text-5xl mb-2 opacity-0 animate-[fadeIn_1s_0.6s_forwards]">Neelam Singh</p>
+            <p class="text-2xl mb-4 opacity-0 animate-[fadeIn_1s_0.9s_forwards]">
+                <span id="typewriter" class="font-semibold"></span>
+            </p>
+            <div class="opacity-0 animate-[fadeIn_1s_1.2s_forwards] space-x-3">
+                <button
+                    class="rounded-4xl outline-2 outline-green-800 bg-green-700 p-2 text-white transition-transform duration-300 transform hover:scale-105">Get
+                    Resume</button>
+                <button
+                    class="rounded-4xl outline-2 outline-green-800 hover:bg-green-700 p-2 hover:text-white transition-transform duration-300 transform hover:scale-105">Hire
+                    Me</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="m-10">
+        <h1 class="text-5xl text-center text-green-900 font-bold mb-10 hidden-element"
+            data-animation="animate-from-bottom">SKILLS</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="hidden-element" data-animation="animate-from-left" data-delay="0.1">
+                <h2 class="text-2xl font-semibold text-green-800 mb-4 text-center">Soft Skills</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-7 text-center">
+                    <div class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-green-900 outline-2 outline-green-900 hover:text-white hover:bg-green-900 rounded p-8 hidden-element"
+                        data-animation="animate-scale" data-delay="0.2">
+                        <h2 class="text-xl font-semibold">Communication</h2>
+                    </div>
+                    <div class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-green-900 outline-2 outline-green-900 hover:text-white hover:bg-green-900 rounded p-8 hidden-element"
+                        data-animation="animate-scale" data-delay="0.3">
+                        <h2 class="text-xl font-semibold">Teamwork</h2>
+                    </div>
+                    <div class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-green-900 outline-2 outline-green-900 hover:text-white hover:bg-green-900 rounded p-8 hidden-element"
+                        data-animation="animate-scale" data-delay="0.4">
+                        <h2 class="text-xl font-semibold">Problem Solving</h2>
+                    </div>
+                    <div class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-green-900 outline-2 outline-green-900 hover:text-white hover:bg-green-900 rounded p-8 hidden-element"
+                        data-animation="animate-scale" data-delay="0.5">
+                        <h2 class="text-xl font-semibold">Time Management</h2>
+                    </div>
+                    <div class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-green-900 outline-2 outline-green-900 hover:text-white hover:bg-green-900 rounded p-8 hidden-element"
+                        data-animation="animate-scale" data-delay="0.6">
+                        <h2 class="text-xl font-semibold">Continuous Learner</h2>
+                    </div>
+                    <div class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-green-900 outline-2 outline-green-900 hover:text-white hover:bg-green-900 rounded p-8 hidden-element"
+                        data-animation="animate-scale" data-delay="0.7">
+                        <h2 class="text-xl font-semibold">Adaptability</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hidden-element" data-animation="animate-from-right" data-delay="0.1">
+                <h2 class="text-2xl font-semibold text-green-800 mb-4 text-center">Technical Skills</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 text-center">
+                    <div class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-green-900 outline-2 outline-green-900 hover:text-white hover:bg-green-900 rounded p-6 hidden-element"
+                        data-animation="animate-scale" data-delay="0.2">
+                        <h2 class="text-xl font-semibold">HTML/CSS</h2>
+                        <p class="text-sm mb-1">Used to structure and style webpages</p>
+                        <!-- <div class="skill-bar">
+                            <div class="skill-level" data-level="90"></div>
+                        </div> -->
+                    </div>
+                    <div class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-green-900 outline-2 outline-green-900 hover:text-white hover:bg-green-900 rounded p-6 hidden-element"
+                        data-animation="animate-scale" data-delay="0.3">
+                        <h2 class="text-xl font-semibold">Bootstrap</h2>
+                        <p class="text-sm mb-1">Front-end framework for responsive design.</p>
+                        <!-- <div class="skill-bar">
+                            <div class="skill-level" data-level="85"></div>
+                        </div> -->
+                    </div>
+                    <div class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-green-900 outline-2 outline-green-900 hover:text-white hover:bg-green-900 rounded p-6 hidden-element"
+                        data-animation="animate-scale" data-delay="0.4">
+                        <h2 class="text-xl font-semibold">Tailwind CSS</h2>
+                        <p class="text-sm mb-1">Utility-first CSS framework for rapid UI.</p>
+                        <!-- <div class="skill-bar">
+                            <div class="skill-level" data-level="80"></div>
+                        </div> -->
+                    </div>
+                    <div class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-green-900 outline-2 outline-green-900 hover:text-white hover:bg-green-900 rounded p-6 hidden-element"
+                        data-animation="animate-scale" data-delay="0.5">
+                        <h2 class="text-xl font-semibold">JavaScript</h2>
+                        <p class="text-sm mb-1">Used to add interactivity to web pages.</p>
+                        <!-- <div class="skill-bar">
+                            <div class="skill-level" data-level="75"></div>
+                        </div> -->
+                    </div>
+                    <div class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-green-900 outline-2 outline-green-900 hover:text-white hover:bg-green-900 rounded p-6 hidden-element"
+                        data-animation="animate-scale" data-delay="0.6">
+                        <h2 class="text-xl font-semibold">PHP</h2>
+                        <p class="text-sm mb-1">Server-side scripting for web development.</p>
+                        <!-- <div class="skill-bar">
+                            <div class="skill-level" data-level="70"></div>
+                        </div> -->
+                    </div>
+                    <div class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-green-900 outline-2 outline-green-900 hover:text-white hover:bg-green-900 rounded p-6 hidden-element"
+                        data-animation="animate-scale" data-delay="0.7">
+                        <h2 class="text-xl font-semibold">MySQL</h2>
+                        <p class="text-sm mb-1">Database management for dynamic sites.</p>
+                        <!-- <div class="skill-bar">
+                            <div class="skill-level" data-level="65"></div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="m-10">
+        <h1 class="text-5xl text-center text-green-900 font-bold mb-10 hidden-element"
+            data-animation="animate-from-bottom">PROJECTS</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center shadow-lg rounded-2xl p-5 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hidden-element"
+                data-animation="animate-from-bottom" data-delay="0.1">
+                <h3 class="text-2xl font-semibold">Project-1</h3>
+                <h2 class="text-3xl font-bold my-2">SoulFul Journeys</h2>
+                <img src="travel.png" alt="SoulFul Journeys" class="my-5">
+                <p class="text-xl my-2">A travel booking platform with subpackages, carousel, and user login.</p>
+                <a href="http://localhost/397/ty_397/typroject/" target="_blank"
+                    class="outline-2 outline-green-700 font-bold cursor-pointer text-shadow-green-900 bg-green-100 p-2">Take
+                    a Look >></a>
+            </div>
+            <div class="text-center shadow-lg rounded-2xl p-5 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hidden-element"
+                data-animation="animate-from-bottom" data-delay="0.3">
+                <h3 class="text-2xl font-semibold">Project-2</h3>
+                <h2 class="text-3xl font-bold my-2">Registration Form</h2>
+                <img src="form.png" alt="Registration Form" class="my-5">
+                <p class="text-xl my-5">A form built using HTML and CSS.</p>
+                <a href="registration.html" target="_blank"
+                    class="outline-2 outline-green-700 font-bold cursor-pointer text-shadow-green-900 bg-green-100 p-2">Take
+                    a Look >></a>
+            </div>
+            <div class="text-center shadow-lg rounded-2xl p-5 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hidden-element"
+                data-animation="animate-from-bottom" data-delay="0.5">
+                <h3 class="text-2xl font-semibold">Project-3</h3>
+                <h2 class="text-3xl font-bold my-2">Netflix Clone</h2>
+                <img src="netflix.png" alt="Netflix Clone" class="my-5">
+                <p class="text-xl my-2">A responsive Netflix homepage clone using HTML, CSS, and Flexbox.</p>
+                <a href="netflix/netflix.html" target="_blank"
+                    class="outline-2 outline-green-700 font-bold cursor-pointer text-shadow-green-900 bg-green-100 p-2">Take
+                    a Look >></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="m-10 bg-green-100">
+        <div class="flex flex-col md:flex-row items-center p-12 gap-12">
+
+            <img src="bg01.png" alt="my" height="200" width="300" class="rounded-2xl shadow-lg ml-30 hidden-element"
+                data-animation="animate-from-left">
+
+            <div class="md:text-left text-center hidden-element" data-animation="animate-from-right">
+                <h1 class="text-5xl text-green-900 font-bold mt-5 md:mt-0 mb-5">About Me</h1>
+                <p class="text-lg font-medium leading-relaxed text-gray-700">
+                    I'm a BCA graduate with a good understanding of technology and problem-solving. <br>
+                    I have hands-on experience with HTML, CSS, JavaScript, PHP, and MySQL. <br>
+                    I enjoy building real-world projects and continuously learning to improve my skills. <br>
+                    I'm looking for job opportunities where I can grow, contribute to a team, and take on new
+                    challenges. <br>
+                    <span class="text-green-800 font-semibold">Open to connect and collaborate!</span>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Experiences Section -->
+    <section id="experiences" class="m-10">
+        <h1 class="text-5xl text-center text-green-900 font-bold mt-10 p-5 hidden-element"
+            data-animation="animate-from-bottom">Experiences</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+
+            <div class="shadow-lg rounded-xl p-6 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hidden-element"
+                data-animation="animate-from-left" data-delay="0.1">
+                <div class="flex justify-between items-start mb-3">
+                    <h3 class="text-2xl font-bold text-green-800">Intern</h3>
+                    <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">May 2024 - Jul
+                        2024</span>
+                </div>
+                <h4 class="text-xl font-semibold mb-2">Dreamer Technologies, Vapi</h4>
+                <div class="border-l-4 border-green-700 pl-4 py-1 my-3">
+                    <p class="text-lg text-gray-700">Web Development Intern</p>
+                </div>
+                <ul class="space-y-2 mt-4">
+                    <li class="flex items-start">
+                        <div class="flex-shrink-0 w-5 h-5 mt-1 mr-2 bg-green-700 rounded-full"></div>
+                        <p class="text-gray-700">Developed responsive web pages using HTML5 and CSS3</p>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="flex-shrink-0 w-5 h-5 mt-1 mr-2 bg-green-700 rounded-full"></div>
+                        <p class="text-gray-700">Used Bootstrap to design mobile-first UI components</p>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="flex-shrink-0 w-5 h-5 mt-1 mr-2 bg-green-700 rounded-full"></div>
+                        <p class="text-gray-700">Worked with PHP and MySQL for basic backend and database handling</p>
+                    </li>
+                </ul>
+                <div class="flex flex-wrap gap-2 mt-5">
+                    <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full text-sm">HTML/CSS</span>
+                    <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full text-sm">Bootstrap</span>
+                    <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full text-sm">PHP</span>
+                    <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full text-sm">MySQL</span>
+                </div>
+            </div>
+
+            <div class="shadow-lg rounded-xl p-6 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hidden-element"
+                data-animation="animate-from-right" data-delay="0.2">
+                <div class="flex justify-between items-start mb-3">
+                    <h3 class="text-2xl font-bold text-green-800">College Project</h3>
+                    <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">Jan 2024 - Apr
+                        2024</span>
+                </div>
+                <h4 class="text-xl font-semibold mb-2">BCA Final Year Project</h4>
+                <div class="border-l-4 border-green-700 pl-4 py-1 my-3">
+                    <p class="text-lg text-gray-700">SoulFul Journeys - Travel Booking Platform</p>
+                </div>
+                <ul class="space-y-2 mt-4">
+                    <li class="flex items-start">
+                        <div class="flex-shrink-0 w-5 h-5 mt-1 mr-2 bg-green-700 rounded-full"></div>
+                        <p class="text-gray-700">Designed and developed a complete travel booking platform</p>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="flex-shrink-0 w-5 h-5 mt-1 mr-2 bg-green-700 rounded-full"></div>
+                        <p class="text-gray-700">Created user authentication system with PHP and MySQL</p>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="flex-shrink-0 w-5 h-5 mt-1 mr-2 bg-green-700 rounded-full"></div>
+                        <p class="text-gray-700">Implemented responsive design with Bootstrap framework</p>
+                    </li>
+                </ul>
+                <div class="flex flex-wrap gap-2 mt-5">
+                    <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full text-sm">PHP</span>
+                    <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full text-sm">MySQL</span>
+                    <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full text-sm">Bootstrap</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="m-10">
+        <h1 class="text-5xl text-center text-green-900 font-bold mt-10 p-5 hidden-element"
+            data-animation="animate-from-bottom">Contact Me</h1>
+
+        <div class="flex flex-col md:flex-row gap-8 md:gap-25">
+            <div class="text-green-900 mt-10 md:ml-60 hidden-element" data-animation="animate-from-left">
+                <form class="my-5 outline outline-green-900 w-full md:w-130 p-10">
+                    <h1 class="text-green-900 text-3xl mb-4">Get In Touch</h1>
+                    <label class="m-5">Your Full Name:</label>
+                    <input
+                        class="outline outline-green-90 m-4 w-full md:w-100 transition-all focus:ring-2 focus:ring-green-600 focus:outline-none rounded p-2"
+                        type="text" placeholder="Your Name Here"><br>
+                    <label class="m-5">Email: </label><br>
+                    <input
+                        class="outline outline-green-90 m-4 w-full md:w-100 transition-all focus:ring-2 focus:ring-green-600 focus:outline-none rounded p-2"
+                        type="text" placeholder="Your Email"><br>
+                    <label class="m-5">Phone Number:</label>
+                    <input
+                        class="outline outline-green-90 m-4 w-full md:w-100 transition-all focus:ring-2 focus:ring-green-600 focus:outline-none rounded p-2"
+                        type="text" placeholder="Your Phone"><br>
+                    <label class="m-5">Write Message:</label>
+                    <textarea
+                        class="outline outline-green-90 m-4 w-full md:w-100 transition-all focus:ring-2 focus:ring-green-600 focus:outline-none rounded p-2"
+                        placeholder="Write your message" cols="10" rows="5"></textarea><br>
+                    <button type="submit"
+                        class="outline-2 rounded outline-green-900 text-green-900 text-center justify-self-center md:ml-35 font-bold h-10 cursor-pointer w-35 duration-200 ease-in hover:text-white hover:bg-green-900">Send
+                        Message</button>
+                </form>
+            </div>
+            <div class="justify-center text-xl mt-20 md:mr-90 text-green-900 hidden-element"
+                data-animation="animate-from-right">
+                <h1 class="text-3xl">My Contact Details</h1><br>
+                <p>EMAIL: <br>neelamsingh00506@gmail.com</p><br>
+                <hr><br>
+                <p>PHONE: <br> 9664731135</p><br>
+                <hr><br>
+                <p>Linkedin: <br> https://www.linkedin.com/in/neelam--singh </p><br><br>
+                <hr><br>
+                <p>ADDRESS: <br> R.B.L-61/722, Chanod Colony, Vapi</p><br>
+                <hr><br>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with Animation -->
+    <hr>
+    <footer class="py-3 bg-green-900 text-white" data-animation="animate-from-bottom">
+        <p class="text-center text-lg">&copy;Neelam Singh. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Typewriter effect
+        const text = "Web Developer";
+        let index = 0;
+
+        function typeEffect() {
+            if (index < text.length) {
+                document.getElementById("typewriter").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeEffect, 200);
+            }
+        }
+
+        // Function to check if element is in viewport
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+                rect.bottom >= 0
+            );
+        }
+
+        // Function to animate elements when they come into view
+        function animateOnScroll() {
+            const animatedElements = document.querySelectorAll('.hidden-element');
+
+            animatedElements.forEach(element => {
+                if (isInViewport(element) && !element.classList.contains('animated')) {
+                    const animationType = element.getAttribute('data-animation');
+                    const delay = element.getAttribute('data-delay') || 0;
+
+                    // Apply animation with delay
+                    element.style.animationDelay = `${delay}s`;
+                    element.style.visibility = 'visible';
+                    element.classList.add(animationType, 'animated');
+
+                    // Animate skill bars if present
+                    const skillBars = element.querySelectorAll('.skill-level');
+                    if (skillBars.length > 0) {
+                        setTimeout(() => {
+                            skillBars.forEach(bar => {
+                                const level = bar.getAttribute('data-level') + '%';
+                                bar.style.width = level;
+                            });
+                        }, delay * 1000 + 300);
+                    }
+                }
+            });
+        }
+
+        window.onload = function () {
+            typeEffect();
+
+            // Initial animation check
+            animateOnScroll();
+
+            // Add scroll event listener
+            window.addEventListener('scroll', animateOnScroll);
+
+            // Also trigger on resize for responsiveness
+            window.addEventListener('resize', animateOnScroll);
+        };
+    </script>
+</body>
+
+</html>
